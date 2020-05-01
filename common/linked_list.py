@@ -1,3 +1,22 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def build_linked_list_with_ListNode(lst= []):
+
+    if not lst:
+        return
+
+    start = ListNode(lst[0])
+    current = start
+    for i in lst[1:]:
+        temp = ListNode(i)
+        current.next = temp
+
+        current = temp
+
+    return start
 
 class node:
     value = None
