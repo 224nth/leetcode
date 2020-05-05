@@ -7,6 +7,39 @@ class TreeNode:
         self.right = right
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def build_binary_tree_T(lst= []):
     if not lst:
         return
