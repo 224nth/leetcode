@@ -1,23 +1,28 @@
 
-# Definition for a Node.
-class Node(object):
-    def __init__(self, val=0, left=None, right=None, next=None):
+
+# Definition for a binary tree node.
+from typing import List
+
+from problems.lc_297 import Codec
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
-        self.next = next
-
-from common.binary_tree import build_binary_tree
 
 
-class Solution(object):
-    def connect(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+class Solution:
+
+
+    def rightSideView(self, root: TreeNode) -> List[int]:
+
+
         if not root:
             return []
+
+        res = []
 
         odd = True
 
@@ -39,20 +44,19 @@ class Solution(object):
                 next_lst.append(element.right)
 
             if len(current_lst) == 0:
-                element.next = None
+                res.append(element.val)
                 odd = not odd
-            else:
-                element.next = current_lst[0]
-
-        return root
+        return res
 
 
+codec = Codec()
+# str1= "1,2,3,None,5,None,4"
+# node = codec.deserialize(str1)
+# print(Solution().rightSideView(node))
 
 
+str1= "1,2,3,4"
+node = codec.deserialize(str1)
+print(Solution().rightSideView(node))
 
-
-
-
-tree = build_binary_tree([1,2,3,4,5,6,7], Node)
-new_node = Solution().connect(tree)
 print("done")

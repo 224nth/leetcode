@@ -70,18 +70,18 @@ class node:
         self.value = value
 
 
-def build_binary_tree(lst= []):
+def build_binary_tree(lst= [], node_class= node):
     if not lst:
         return
 
     q = queue.Queue()
-    root = node(lst[0])
+    root = node_class(lst[0])
     q.put(root)
 
     for i in range(1,len(lst)-1,2):
         parent = q.get()
-        left = node(lst[i])
-        right = node(lst[i+1])
+        left = node_class(lst[i])
+        right = node_class(lst[i+1])
         parent.left = left
         parent.right = right
 

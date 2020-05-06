@@ -102,26 +102,26 @@ class Codec:
         return head
 
 
-codec = Codec()
-
-
-
-str1 = "-1,0,1"
-
-a = codec.serialize(codec.deserialize(str1))
-
-print('root')
-a = codec.deserialize(codec.serialize(None))
-
-str1 = "2,3,4,None,None,2,4,6"
-root = Codec().deserialize(str1)
-
-str_back = Codec().serialize(root)
-
-print(str1)
-print(str_back)
-assert  str1 == str_back
-
+# codec = Codec()
+#
+#
+#
+# str1 = "-1,0,1"
+#
+# a = codec.serialize(codec.deserialize(str1))
+#
+# print('root')
+# a = codec.deserialize(codec.serialize(None))
+#
+# str1 = "2,3,4,None,None,2,4,6"
+# root = Codec().deserialize(str1)
+#
+# str_back = Codec().serialize(root)
+#
+# print(str1)
+# print(str_back)
+# assert  str1 == str_back
+#
 
 
 
