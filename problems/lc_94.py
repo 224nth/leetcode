@@ -9,26 +9,29 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+
+
 class Solution:
     def inorderTraversal(self, root: TreeNode) -> List[int]:
 
-        stack = []
+        stack = [root]
 
         ans = []
 
-        if root:
-            stack.append(root)
         while len(stack) > 0:
+            root = stack[-1]
 
-            current = stack.pop()
-
-            ans.append(current.val)
-
-            if current.right:
-                stack.append(current.right)
-
-            if current.left:
-                stack.append(current.left)
+            if root and root.left:
+                stack.append(root.left)
+                root.left = None
+            elif root:
+                ans.append(root.val)
+                stack.pop()
+                if root.right:
+                    stack.append(root.right)
+            else:
+                stack.pop()
 
         return ans
 
@@ -39,4 +42,4 @@ codec = Codec()
 
 root = codec.deserialize("1,None,2,3")
 
-assert Solution().preorderTraversal(root) == [1,2,3]
+assert Solution().inorderTraversal(root) == [1,3,2]

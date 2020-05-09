@@ -66,7 +66,7 @@ class Codec:
         # change it back to lst with proper values
         lst = data.split(',')
         for i in range(len(lst)):
-            if lst[i] != 'None':
+            if lst[i] != 'None' and lst[i] != 'null':
                 lst[i] = int(lst[i])
             else:
                 lst[i] = None

@@ -1,6 +1,7 @@
 import sys
 
 from common.binary_tree import build_binary_tree
+from problems.lc_297 import Codec
 
 
 class Solution(object):
@@ -31,10 +32,11 @@ class Solution(object):
 
         return False
 
-lst = [7,3,10,1,4,8,11]
-tree = build_binary_tree(lst)
-assert(Solution().isValidBST(tree) == True)
 
-lst = [2,1,1,1]
-tree = build_binary_tree(lst)
+codec = Codec()
+
+root = codec.deserialize("7,3,10,1,4,8,11")
+assert(Solution().isValidBST(root) == True)
+
+tree = build_binary_tree("2,1,1,1")
 assert(Solution().isValidBST(tree) == False)
