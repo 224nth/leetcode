@@ -10,7 +10,7 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
-    def preorderTraversal(self, root: TreeNode) -> List[int]:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
 
         stack = []
 
