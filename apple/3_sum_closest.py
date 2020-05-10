@@ -7,7 +7,7 @@ class Solution:
 
         nums.sort()
 
-        closest = sys.maxsize
+        closest = 2**31
 
         for i in range(0, len(nums)):
 
@@ -19,26 +19,25 @@ class Solution:
                 b = nums[s]
                 c = nums[l]
 
-                if  abs(target - (a + b + c)) < abs(target - closest):
+                if abs(target - (a + b + c)) < abs(target - closest):
                     closest = a+b+c
-                    l -= 1
+
+                if target > a + b + c:
                     s += 1
-
-
-                elif a + b + c > 0:
-                    l -= 1
                 else:
-                    s += 1
+                    l -= 1
 
         return closest
 
 
+
+assert  Solution().threeSumClosest([0,2,1,-3], 1) == 0
 nums = [-1, 2, 1, -4]
 target = 1
 
-print(Solution().threeSumClosest(nums, target))
+assert Solution().threeSumClosest(nums, target) == 2
 
 
 nums =[1,1,1,0]
 target =100
-print(Solution().threeSumClosest(nums, target))
+assert Solution().threeSumClosest(nums, target) == 3
