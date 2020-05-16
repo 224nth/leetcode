@@ -14,18 +14,13 @@ class TreeNode:
 
 
 class Solution:
-
-
     def rightSideView(self, root: TreeNode) -> List[int]:
-
 
         if not root:
             return []
 
         res = []
-
         odd = True
-
         lst_even = []
         lst_odd = [root]
 
